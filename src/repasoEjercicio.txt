@@ -1,0 +1,37 @@
+
+Primero creamos las rutas principales y luego las rutas hijas
+
+
+Luego, hacemos la conexion de las principales a las hijas con 
+    {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)
+  },
+
+Esto es la clave del lazy load. Cuando entre en el path auth, carga 
+sus hijos y este modulo hijo va a venir del producto del auth.module.
+Como es una promesa lo que va a regresar es el AuthModule
+
+instalar el angular material
+
+Para instalar angular flex : 
+  npm i @angular/flex-layout --force
+  npm i -s @angular/flex-layout @angular/cdk
+Lo usamos en la parte de los heroes
+
+
+USO DE LA API:
+  instalamos json-server,ejecutando la terminal como admin. Pagina https://www.npmjs.com/package/json-server
+  Creamos un archivo con u json y lo metemos en una nueva carpeta dentro de Angular.
+  iniciamos el server en la terminal con json-server --watch db.json.
+  Hay que tener abierta la terminal por detras porque va a ser nuestro backend server.
+  Para las imagenes nos las descargamos y las metemos en Angular/HeroesApp/Src/Assets
+
+  En app.module importamos el httpClientModule. Inyectamos el servicio
+  para poder hacer esas peticiones. Regresamos el observable en nuestro service
+  y luego en nuestro listado component nos suscribimos
+
+
+  Para login
+  ng g guard auth/guards/auth
+  canActivate y canLoad

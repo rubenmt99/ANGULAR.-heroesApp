@@ -1,0 +1,26 @@
+<h1>Listado de Héroes</h1>
+
+<mat-divider></mat-divider>
+<br>
+
+
+<div fxLayout="row wrap"
+fxLayout.xs="column"
+fxLayoutAlign="center"
+fxLayoutGap="20px">
+
+<div fxFlex="20"
+    fxFlex.lg="15"
+    fxFlex.sm="30"
+    *ngFor="let heroe of misHeroes">
+
+
+    <!--Creamos Heroe-Tarjeta component. Allí ponemos un input que le va a llegar un heroe.
+        Desde aquí, el componente padre le mandamos el valor. Así podemos completar nuestro html en heroe-tarjeta-->
+<app-heroe-tarjeta [misHeroes]="heroe"></app-heroe-tarjeta>
+
+
+</div>
+</div>
+
+
